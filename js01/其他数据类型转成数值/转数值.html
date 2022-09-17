@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var A = 100.10
+        var B = Number(A)//Number可检测小数
+        console.log(A,B)
+
+
+        var a = "100"
+
+        var b = Number(a)  //
+        console.log(typeof a,typeof b)
+        console.log(typeof a)
+        console.log(typeof b)
+        console.log(a,b)
+ 
+        var c = "abc"  // NaN not a number
+        var d = Number(c)
+        console.log(d)
+        console.log(c,typeof d)
+
+        // Boolean    true false
+
+        var e = true
+        var f = Number(e)
+        console.log(e,f) // true结果为1
+
+        var g = null
+        var h = Number(g) // 0
+        console.log(g,h)
+
+        var i /* = undefined */
+        var j = Number(i) //NaN
+        console.log(i,j)
+
+        var k = "123abg"
+        var l = Number(k) //NaN
+        console.log(k,l)
+
+
+        /* var m = "123abg"
+        var n = parseInt(m) //解析整数,所以保留123
+        console.log(m,n) */
+
+        /* var m = "123.8"
+        var n = parseInt(m) //解析整数,所以保留123
+        console.log(m,n) */
+
+        var m = "123.85abv"
+        var n = parseFloat(m) //保留浮点
+        console.log(m,n)
+
+        //非加号
+        var K = "100"
+        var L = K-0
+        console.log(L)
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

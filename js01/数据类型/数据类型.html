@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.基本类型
+        /* 
+        1.Number   18,  12.5   NaN:NaN not a number
+        2.String   字符串
+        3.Boolean    true false
+        4.Undefined : undefined不需要赋值
+        5.Null   null
+        6.Symbol       
+        */
+
+        /* Number */
+        var age = 18
+        //console.log(age+20)
+
+        var price = 12.8//浮点数
+        console.log(price)
+
+        var year = 2e3 //2*(10*10*10)  科学计数法
+        console.log(year)
+
+        var a = 0x99  //0x 十六进制  9*16+9    1-9,a,b,c,d,e,f
+        console.log(a)
+
+        var b = 077 //0 八进制  7*8+7
+        console.log(b)
+
+        var c = 0b11
+        console.log(c) //0b 二进制 1*2+1
+
+        var num1 = 10
+        var num2 = "20"    //字符串 
+        console.log(num1+num2)  //类型转换
+
+        /* String   字符串   输出为文本 */
+        var str = "hello"  //"" ''没区别
+        console.log(str)
+
+        /* Boolean   true false */
+        var isChecked = true
+        console.log(isChecked)
+
+        /* Undefined 声明了,但是未赋值 */
+        var which
+        console.log(which)
+
+        which = 100 //后面需要赋值时再进行赋值
+        console.log(which)
+
+        /* Null 确定要赋值,但不知道要赋值什么,就为空, */
+        var whichObject = null
+
+        whichObject = {name:"makima"}
+        console.log(whichObject)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

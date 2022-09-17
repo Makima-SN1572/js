@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.判断奇偶   %取余
+        /* var number = 100
+        if(number%2===0){
+            //注意输出要加""否则就变成输出变量了,而不是输出字符串
+            console.log("偶数")
+        }else {
+            console.log("奇数")
+        } */
+
+        //其中0为假,1为真,所以奇数偶数还有另一种写法
+        /* var number = 100
+        if (number%2){
+            //这里奇数会余1,所以判断为true 走第一条
+            console.log("奇数")
+        } else {
+            console.log("偶数")
+        } */
+        var number = 100
+        if (!(number%2)){
+            //这里奇数会余1,所以判断为true 走第一条
+            console.log("偶数")
+        } else {
+            console.log("奇数")
+        }
+
+        // 2.根据0~100的数字输出成绩
+        var so = 75
+        if (so>=90){
+            console.log("A")
+        }else if(so>=80){
+            console.log("B")
+        }else if(so>=70){
+            console.log("C")
+        }else if(so>=60){
+            console.log("D")
+        }else if(so<60){
+            console.log("E")
+        }
+
+
+
+        // 3.判断闰年
+        //世纪闰年:公立年份是整百数的,必须是400的噢诶书才是闰年
+        //year%400===0
+        //普通闰年: 公立年份是4的倍数,且不是100的倍数的
+        //year%4===0 && year%100!=0
+
+        //&& 是比||先运算,优先级更高
+        var year = 2000
+        if (year%400===0 || (year%4===0 && year%100!=0)){
+            console.log("闰年")
+        }else{
+            console.log("平年")
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

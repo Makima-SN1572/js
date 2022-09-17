@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 自增   注意不可以连续输出,连续输出则导致n值变化
+        var a = 10
+        /* ++a
+        console.log(a) */
+        /* console.log(++a) ++前置,是先加1再把结果输出 */
+        //console.log(a++) //先输出结果,然后加1
+
+        var n = 10
+        var res = ++n + n++ + ++n  // 11+ 11(给第三个n+1) + 13(这里是因为n++,所以是12,然后++前置所以+1,代码是从左往右运行的n的值也在变化)
+        console.log(n,res)
+
+
+        //自减
+        var n = 10
+        //console.log(--n)
+        console.log(n--)
+        //console.log(n)
+
+        var m = 10
+        var rem = m++ + --m + m-- + ++m  //10 + (1-10+1) + 10 + (1+10-1)
+        console.log(rem)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

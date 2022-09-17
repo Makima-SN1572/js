@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //满200-10 100-5  50-3
+        var sum = 200
+        var youhuisum
+        switch (true){
+            case sum>=200:
+                youhuisum = sum - 10
+                break;
+            case sum>=100 && sum<200:
+                youhuisum = sum - 5
+                break;
+            case sum>=50 && sum<100:
+                youhuisum = sum -3
+                break;
+            default:
+                youhuisum = sum
+                break;
+        }
+        document.write(sum,youhuisum)
+
+        // 根据1-12 的数字来输出一个月有多少天,不考虑闰年
+        var month = 12
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.write("31天")
+                break;
+            case 2:
+                document.write("28天")
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.write("30天")
+                break;
+            default:
+                break;
+        }
+
+        //成绩的案例改写 switch
+        var score = 55
+        var flagScore = parseInt(score/10)
+        switch (score) {
+            case 10:
+                document.write("A")
+                break;
+            case 9:
+                document.write("B")
+                break;
+            case 8:
+                document.write("C")
+                break;
+            case 7:
+                document.write("D")
+                break;
+            case 6:
+                document.write("E")
+                break;
+            default:
+                document.write("P")
+                break;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
