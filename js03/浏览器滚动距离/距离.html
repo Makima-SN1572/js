@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+            width: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 300px;width: 200px;"></div>
+    <button id="btn">回到顶部</button>
+    <script>
+        //
+        // console.log(document.documentElement.scrollTop)//滚动的距离
+        //console.log(document.body.scrollTop)//当浏览器不支持<!DOCTYPE html>时,用这个解决兼容性问题
+        window.onscroll = function () {
+            //console.log(document.documentElement.scrollTop)//滚动的距离
+            // console.log(document.body.scrollTop)//当浏览器不支持<!DOCTYPE html>时,用这个解决兼容性问题
+
+            //两者兼容
+            console.log(document.documentElement.scrollTop ||
+                document.body.scrollTop)
+            //横向滚动
+            console.log(document.documentElement.scrollLeft ||
+                document.body.scrollLeft)
+
+            if ((document.documentElement.scrollTop ||
+                document.body.scrollTop) > 100) {
+                console.log("显示回到顶部按钮")
+            } else {
+                console.log("隐藏回到顶部按钮")
+
+            }
+
+
+        }
+        btn.onclick = function () {
+            //window.scrollTo(0,0)//回到指定位置
+            //(x轴滚动的位置,y轴滚动的位置)
+            window.scrollTo({
+                left:0,
+                top:0
+            })
+        }
+
+    </script>
+</body>
+
+</html>

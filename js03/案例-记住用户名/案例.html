@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        用户名:
+        <input type="text" id="username">
+    </div>
+    <div>
+        密码:
+        <input type="password" id="password">
+    </div>
+    <div>
+        <button id="login">登录</button>
+    </div>
+    <script>
+
+        //先获取用户名密码信息进行存储,判断是否为存过,存了直接自动输入
+        var uservale = localStorage.getItem("username")
+        var passvale = localStorage.getItem("password")
+        if(username && password) {
+            username.value = uservale
+            password.value = passvale
+        }
+        login.onclick = function () {
+            console.log(username.value, password.value) //获取输入框内容username.value
+            localStorage.setItem("username", username.value)
+            localStorage.setItem("password", password.value)
+        }
+    </script>
+</body>
+
+</html>
