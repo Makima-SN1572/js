@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [1, 2, 3, 1, 5, 4, 5, 8, 9, 6, 3, 7]
+        /* var arr2 = []
+        for(var i=0;i<arr1.length;i++){
+            if(arr2.indexOf(arr1[i])=== -1){
+                arr2.push(arr1[i])//这里是当索引到arr2不包含这个索引值时,就会把他push到arr2里
+
+            }
+            
+        }
+        console.log(arr1,arr2) */
+
+
+        //2.利用对象
+        var obj = {}
+        /* obj[2] = "asadasfdsafsa"
+        obj[2] = "asadasfdsafsa"//这里是覆盖了,用数字或者字符串做key去重
+        console.log(obj) */
+        for (var i = 0; i < arr1.length; i++) {
+            obj[arr1[i]] = "随便"
+        }
+        console.log(obj)
+        var arr2 = []
+        for (var i in obj) {
+            arr2.push(i-0)
+
+        }
+        console.log(arr2)
+
+        //3.new Set
+
+        var set1 = new Set(arr1)
+        console.log(set1)//变成Set结构
+        var arr3 = Array.from(set1)
+        console.log(arr3)//Set结构转换成数组
+    </script>
+</body>
+
+</html>

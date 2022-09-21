@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 不影响原数组的方法 -->
+    <script>
+        //concat 拼接  两个数字拼成一个数组
+        //拼接顺序也有影响
+       /*  var arr1 = [1, 2, 3]
+        var arr2 = [4, 5, 6]
+        var arr3 = arr1.concat(arr2, 7/* 可以再往里面的后面加元素 *//*, [8, 9])
+        console.log(arr1, arr2, arr3)
+
+        var arr4 = arr1.concat()
+        arr4.pop() //concat拼接不会影响arr1原数组,pop就只改变了arr4
+        console.log(arr1, arr4) */
+
+        //join 数组==>字符串  用什么符号来来连接数组
+        //var arr1 = [1,2,3,4,5]
+        //document.write(arr1.join("-"))
+        /* var arr = []
+        for(var i=0;i<5;i++){
+            arr.push("<li>"+i+"</li>")
+        }
+        //console.log(arr)
+        document.write(arr.join("")) */
+
+        //slice 截取(开始索引,结束索引)但是包含前不包含后  [)这样子
+        
+        /* var arr2 = ["111","222","22281","18285211","55","999"]
+        var arr3 = arr2.slice(0,4)
+        //var arr3 = arr2.slice(2,-1)负数是表现为倒数第几个,同样抱前不包后,所以不显示倒一位置
+        
+        //arr3.pop()
+        //var arr3 = arr2.slice(3)传单个参数
+        console.log(arr2,arr3) */
+
+        //indexOf  -1是找不到  查要看的内容在第几个位置 (查找的内容,从第几个开始查)
+        var arr = ["aaa","bbb","ccc","ddd","eee"]
+        /* var res = arr.indexOf("ccc")
+        console.log(res) */
+
+        //lastIndexOf   倒着找 -1是找不到
+        var res = arr.lastIndexOf("ccc",2)
+        console.log(res)
+
+
+    </script>
+
+</body>
+
+</html>

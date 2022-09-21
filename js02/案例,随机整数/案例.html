@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //0-10不包含10
+        var res = Math.floor(Math.random()*10)
+        console.log(res)
+        //0-10包含10
+        var res = Math.floor(Math.random()*(10+1))
+        console.log(res)
+        
+        //10-20不包含20
+        var res = Math.floor(Math.random()*(20))+10
+        console.log(res)
+        
+        //10-20包含20
+        var res = Math.floor(Math.random()*(20+1))+10
+        console.log(res)
+        
+        //函数--min-max 不包含最大
+        function getRnd(min,max){
+            if(min>max){
+                console.error("最大最小不分是吧")
+                return
+            }
+            return Math.floor(Math.random()*(max-min))+min
+        }
+        console.log(getRnd(200,300))
+
+        //函数--min-max 包含最大
+        function getRnd(min,max){
+            if(min>max){
+                console.error("最大最小不分是吧")
+                return
+            }
+            return Math.floor(Math.random()*(max-min+1))+min
+        }
+        console.log(getRnd(200,300))
+
+    </script>
+</body>
+</html>

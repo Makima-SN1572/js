@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date()
+        console.log(date)//自动转为字符串
+
+        //new传参
+        //1个参数 毫秒数
+        var date1 = new Date(1000)
+        console.log(date1)
+        //1970 1 10:0:1
+
+        //2个参数 3个参数
+        var date2 = new Date(2023, 0, 3,10,10,10)    //2023年1月3号10点10分10秒
+        console.log(date2)
+
+        //字符串
+        //var data1 = new Date("2023-10-10 10:10:10")
+        var data1 = new Date("2023/10/10 10:10:10")
+        console.log(data1)
+
+    </script>
+</body>
+
+</html>

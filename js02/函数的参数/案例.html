@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function test01(targer) {
+            //给一个默认值
+            //给提示警告
+            if(targer===undefined){
+                //alert("请传入参数")
+                //console.error("请传入参数")
+                targer = 9 //给默认值9
+            }
+            for (var m = 1; m <= targer; m++) {
+                for (var n = 1; n <= m; n++) {
+                    document.write("<span>" + m + "*" + n + "=" + m * n + "</span>")
+                }
+                document.write("<br/>")
+            }
+        }
+        test01(8)
+        test01(6)
+        test01()
+
+        function add(x,y,z){
+            var result = x+y+z
+            document.write(result)
+        }
+        add(2,5,7)
+    </script>
+
+</body>
+
+</html>

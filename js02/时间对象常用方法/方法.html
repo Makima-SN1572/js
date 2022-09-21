@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var date = new Date()
+
+        //getFullYear
+        console.log(date.getFullYear())
+
+        //getMonth 0-11====>1-12
+        console.log(date.getMonth())
+        //getDate
+        console.log(date.getDate())
+        //getDay 周日0 周一--周六 1-6
+        console.log(date.getDay())
+        //时分秒毫秒
+        console.log(date.getHours())
+        console.log(date.getMinutes())
+        console.log(date.getSeconds())
+        console.log(date.getMilliseconds())
+
+        //getT毫ime 时间戳 距离1970...几毫秒
+        console.log(date.getTime())
+
+
+        //设置
+        console.log(date)
+        date.setFullYear(2025)
+        date.setMonth(7)
+        date.setDate(10)
+        date.setHours(12)
+        date.setMinutes(18)
+        date.setSeconds(20)
+        console.log(date)
+
+        date.setTime(1663582883536)
+
+        console.log(date)
+
+        
+
+    </script>
+</body>
+</html>

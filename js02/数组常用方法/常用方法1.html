@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 以下所有方法都会影响原数组 */
+
+
+        var arr = [1,2,3]
+        //push  数组后面追加返回值
+        //返回值   数组增加完后的长度
+        /* arr.push(4)
+        console.log(arr) */
+        var res = arr.push("makima")
+        console.log(arr)
+        console.log("返回值", res)
+
+        //pop 后面删除元素
+        //返回值 删除的元素
+        var respop = arr.pop()
+        console.log(arr)
+        console.log("返回值", respop)
+
+        //unshift 前面追加元素
+        //返回值 数组增加完后的长度
+        var resunshift = arr.unshift()
+        console.log(arr)
+        console.log("返回值", resunshift)
+
+        //shift 前面删除元素
+        //返回值 删除的元素
+        var resshift = arr.shift()
+        console.log(arr)
+        console.log("返回值", resshift)
+
+
+        //splice 删除  arr.splice(要删除第几个的位置开始,删除几个) //位置是从0开始的  //删除一个就是删除这个位置本身的元素
+        //返回值 删除的元素
+        /* var arr2 = ["makima","xiaoming","haha"]
+        var ressplice = arr2.splice(1,2)
+        console.log(arr2)
+        console.log("返回值", ressplice) */
+
+        //splice 增加    rr.splice(要删除第几个的位置开始,删除几个{改成0就可以不删纯添加元素,加的位置在要删除第几个位置那里的前面},加的元素,加的元素,加的元素,加的元素,加的元素,加的元素,加的元素,....)  
+        var arr2 = ["makima","xiaoming","haha"]
+        var ressplice = arr2.splice(1,0,"钢弹")
+        console.log(arr2)
+        console.log("返回值", ressplice)
+
+        //resverse 倒叙
+        var arr3 = [4,3,2,1]
+        arr3.reverse()
+        console.log(arr3)
+
+        //sort 排序  单单就sort按照位数排,,十位排十位,以位大先排
+        var arr4 = [11,21,31,58,64]
+        /* console.log(arr4)
+        arr4.sort()
+        console.log(arr4) */
+        // sort接受一个回调函数
+        arr4.sort(function(a,b){
+            return a-b
+            //从小到大排序
+            //return b-a 从大到小
+
+        })
+        console.log(arr4)
+
+
+
+
+    </script>
+</body>
+
+</html>

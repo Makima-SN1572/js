@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //var str = "makima"
+        //charAt(索引) 返回索引对应的字符
+        /* var str1 = str.charAt(0)
+        console.log(str,str1) */
+
+        //charCodeAt(索引),返回索引对应的字符,字符转字符编码
+        /* var str1 = str.charCodeAt(0)
+        console.log(str1)
+
+        var arr = []
+        //A-Z的字符编码是65-92
+        for (var i = 65; i < 91; i++) {
+            arr.push(String.fromCharCode(i))//fromCharCode把字符编码转换成字符
+        }
+        console.log(arr) */
+        //大小写 
+        /* var str = "HellO"
+        console.log(str.toLocaleUpperCase()) //全部大写
+        console.log(str.toLocaleLowerCase()) //全部小写 */
+
+        //截取 substr(开始索引,结束长度) substring(开始索引,结束索引(下标)-包前不包后) slice(开始索引,结束索引-包前不包后)
+        /* var str = "makima"
+        var str1 = str.substr(1,2)
+        console.log(str1)
+        var str2 = str.substring(1,2)
+        var str21 = str.substring(1)
+        console.log(str2,str21)
+        var str3 = str.slice(1,2)
+        var str31 = str.slice(1)
+        var str32 = str.slice(1,-1)
+        console.log(str3,str31,str32)
+        console.log(str.substring(0,1).toLocaleUpperCase()+str.substring(1)) */
+
+        //replace  用一个字符去代替另一个字符
+        var str1 = "makima"
+        var str2 = str1.replace("m","/")
+        console.log(str2)
+
+
+        //split 分割 join
+        var str = "a,b,c,d"
+        console.log(str.split(",")) //以字符串里一个字符进行分割
+
+        //indexOf("查找的字符",第几个下标开始查) lastIndexOf   查找字符,只会查第一/倒一中第一个遇到到
+        var str4 = "abcdefa"
+        console.log(str4.indexOf("a",1))
+        console.log(str4.lastIndexOf("a",5))
+
+        //concat 连接字符串 +
+        var str5 = "abcd"
+        var str6 = str5.concat("ef")
+        console.log(str6)
+        var str7 = str5+"ef"
+        console.log(str7) 
+
+        //trim 去除首尾空格
+        //trimStar() trimLeft()去掉首空格
+        //trimEnd() trimRight()去掉尾空格
+        var str8 = "      makima      "
+        console.log("|"+str8+"|")
+        console.log("|"+str8.trim()+"|")
+
+        
+
+
+    </script>
+</body>
+
+</html>

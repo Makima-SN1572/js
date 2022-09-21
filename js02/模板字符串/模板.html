@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es6 - ` `
+        //各个li之间回车会报错正常情况要在每个li后面加\
+        var myhtml = "<li>11</li>\
+        <li>11</li>\
+        <li>11</li>"
+        //用es6 ` `代替"最外面就行
+        var muhtml1 = `<li>111</li>
+        <li>222</li>
+        <li>333</li>`
+        document.write(muhtml1)
+
+        var myname = "makima"
+        var str = `my name is ${myname} ${10+20} ${10>20?'aaa':'bbb'}` //${变量}  `里面可以加变量就不用拼接,加运算,加..,${}里面的就是可以用js的代码`
+        document.write(str)
+        var arr = ["makima","kafuka","hadoop"]
+        var arr2 = arr.map(function(item){
+            return `<li>${item}</li>`
+        })
+        document.write(arr2.join(""))
+
+    </script>
+</body>
+</html>

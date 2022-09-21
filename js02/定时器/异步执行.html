@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //这里的执行顺序是从上到下的,但因为延迟定时器的原因所以控制台看起来第二部执行比第三部慢  叫异步执行
+        console.log("1111")//两个cos.lo是同步执行,先同步再异步
+        setTimeout(function () {
+            console.log("222")
+        }, 8000)
+        console.log("333")
+
+        //同步卡死,异步不会执行
+        while(true){}
+    </script>
+</body>
+
+</html>

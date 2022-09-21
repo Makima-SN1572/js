@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //增
+        var obj = {}
+        console.log(obj)
+        obj.name = "makima"
+        obj.age = 100
+        obj.location = "jhua"
+        console.log(obj)
+
+        //查
+        document.write("姓名是"+obj.name)
+
+        //改
+        obj.age = 200
+        console.log(obj)
+
+        //删
+        //obj.name = ""  附空值,只是页面不显示
+        delete obj.name
+        console.log(obj)
+
+
+        //2.增
+        var obj2 = {}
+        var number = "123456"
+        obj2["name"] = "sn1572"   // [name]中括号里面不加双引号的话就是一个变量
+        obj2[number] = "1854648" //这里不加双引号就变成变量了,就会输出变量赋值和相应的obj数据,不会输出number这个数据名
+        obj2["age"] = 100
+        obj2["location"] = "sn1572"
+        console.log(obj2)
+
+        //2.查
+        console.log(obj2["name"])
+
+        //2.改
+        obj2["name"] = "makima"
+
+        //2.删
+        delete obj2["age"]
+        console.log(obj2)
+
+
+        //区别
+        var myobj = {
+            "a+b":"1111",//这里直接用不符合规范的命名方式
+            "#aa":"1111"
+        }
+        //console.log(myobj.a+b)//这里第一种方式就会报错
+        console.log(myobj["a+b"])//而[]就不会
+    </script>
+</body>
+
+</html>

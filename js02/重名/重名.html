@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* var myname = "makima"
+        var myname = "sn1572"
+        console.log(myname) */
+        /* test()
+        function test(){
+            console.log("test01")
+        }
+        function test(){
+            console.log("test02")
+        } */
+        age()
+        var age = 100
+        //变量名与方法名不同
+        function age(){
+            console.log("100000")
+        }
+        console.log(age)
+    </script>
+    <script>
+        //在不同script中重名,下方不会生效
+        age()
+        function age(){
+            console.log("100000")
+        }
+    </script>
+    <script>
+        function test(a,b){
+            var result = a+b
+            console.log("test",result)
+        }
+        test(1,2)
+        //result在函数内部定义,在函数外无法调用
+        console.log(result)
+    </script>
+</body>
+</html>

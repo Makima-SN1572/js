@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //json字符串==>对象
+        //{"key":100,"key":"123"} 对象的key值必须加""
+        var str = '{"name":"makiam","age":100}' //json字符串,看着像对象,但是是字符串     
+        var obj = JSON.parse(str) //用json把字符串转成对象
+        console.log(obj)
+
+        //字符串转JSON
+        var obj1 = {name:"maki",age:"100"}
+        var str1 = JSON.stringify(obj1)
+        console.log(obj1,str1)
+    </script>
+</body>
+</html>

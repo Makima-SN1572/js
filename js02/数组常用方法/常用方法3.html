@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* //foreach 遍历
+        var arr = ["aaa","bbb","ccc","ddd"]
+        //回调函数  item数值自己,index数值位置
+        arr.forEach(function(item,index,arr){
+            console.log(item,index,arr)  
+        }) */
+
+        /* //map 映射
+        var arr = [1, 2, 3, 4, 5]
+        var arr2 = arr.map(function (item) {
+            return item*item //回调函数，把每个arr数值，映射成return的值
+        })
+        console.log(arr2) */
+        /* var arr = ["makima","liujiaho","wsss","kakak"]
+        var arr1 = arr.map(function(item){
+            return "<li>"+item+"</li>"
+        })
+        console.log(arr,arr1)
+        document.write(arr1.join("")) */
+        //filter  过滤
+        /* var arr = [
+            {
+                name: "aaa",
+                price: 100
+            },
+            {
+                name: "bbb",
+                price: 300
+            },
+            {
+                name: "makiam",
+                price: 200
+            }
+        ]
+      //var arr = [100,200,300]
+        var arr2 = arr.filter(function (item) {
+            return item.price > 200  //符合条件才能进arr2   还可以true填false,但没什么用,返回值true,就没变化,false就是不返回,空的
+        })
+        console.log(arr2) */
+
+        //every  每一个  return只要有一个不符合条件就直接返回false
+        /* var arr = [90,90,9,94]
+        var arr1 = arr.every(function(item){
+            return item>=90
+        })
+        console.log(arr1) */
+
+        // some 只要一个条件满足就ok
+        /* var arr = [90,90,9,94]
+        var arr1 = arr.some(function(item){
+            return item>=90
+        })
+        console.log(arr1)
+ */
+        //find 满足某项条件才能入选  如果有多个符合,只返回一个
+        /* var arr = [
+            {
+                name: "数学",
+                price: 100
+            },
+            {
+                name: "语文",
+                price: 80
+            },
+            {
+                name: "体育",
+                price: 95
+            }
+        ]
+        var arr1 = arr.find(function(item){
+            return item.price>95
+        })
+
+        console.log(arr1) */
+        
+        //reduce 叠加  prev上一次的结果,item每一个
+        var arr = [1,2,3,4,5]
+        var arr1 = arr.reduce(function(prev,item){
+            return prev+item
+        },0/* 初始位置从哪里开始 */)
+        console.log(arr1)
+
+        //计算的详解 
+        //prev 0 item 1
+        //prev 1 item 2
+        //prev 3 item 3
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "hello"
+        console.log(str)
+        console.log(str+" word")
+        var str1 = new String("hello")
+        console.log(str1+" word")
+        console.log(str1)
+        //length 只读,改不了
+        console.log(str.length)
+        console.log(str1.length)
+        str1.length = 0 //这里证明修改长度是没用的
+        console.log(str)
+
+
+        //索引 只读
+        console.log(str[1])
+        str[1] = "a"
+        console.log(str) //上方修改了下标但这里出来依旧没用
+
+        //遍历 只读
+        for(var i=0;i<str.length;i++){
+            console.log(i,str1[i])
+        }
+
+        var str2 = str
+        str1 = "AAAA"  //这里的修改并不会影响str2本身
+        console.log(str1,str2)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = ["aaa", "abc", "cda", "bbb", "dd", "ccd"]
+        //数组的filter 字符的indexOf
+        var input = prompt("请输入查询的内容")  //弹个输入框,输什么查什么
+        var res = arr.filter(function (item) {
+            return item.indexOf(input) > -1  //>-1或者!=-1都是表示数组中你要找的符合
+        })
+        console.log(res)
+    </script>
+</body>
+
+</html>

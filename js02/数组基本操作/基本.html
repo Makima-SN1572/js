@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //length  可读可写
+        var arr1 = [1,2,3,4,8]
+        console.log(arr1.length)
+        arr1.length = 2//减数组,剩几个,从后往前删
+        console.log(arr1)
+
+        //清空数组
+        arr1.length = 0
+        console.log(arr1)
+
+        //索引  0,1,2,3 指定第几个修改,指定第几个...
+        var arr2 = ["makima","ova","akakaka","kafuka"]
+        console.log(arr2[0],arr2[1],arr2[2])//拿第0,1,2个
+
+        //索引重新赋值
+        arr2[0] = "sn1572"
+        console.log(arr2)
+
+
+        //遍历
+        var arr3 = [3,4,5,6,7,8]
+        for(var i=0;i<arr3.length;i++){
+            console.log(arr3[i])
+        }
+
+        var arr4 = []  //给个空
+        for(var i=0;i<arr3.length;i++){
+            //给arr4赋值
+            arr4[i] = arr3[i]
+        }
+        console.log(arr4)
+        arr4[0] = "aaa"  //艹,改他!
+        console.log(arr4)
+
+    </script>
+</body>
+
+</html>

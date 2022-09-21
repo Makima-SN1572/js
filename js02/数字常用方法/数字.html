@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Number toFixed(保留几位小数),小数点写多了自动补零  返回是字符串
+        var price = 123.456
+        console.log(price.toFixed(2))
+        var sum = price.toFixed(2)-0+100
+        //因为返回是字符串所以要-0变回数字,再与数字进行加减
+
+        console.log(sum.toFixed(2))
+
+        //Math对象
+        //random  //返回0-1,不包含1的随机数
+        console.log(Math.random())
+        //round 四舍五入取整
+        console.log(Math.round(8.56))
+        //ceil向上取整数 floor向下取整
+        console.log(Math.ceil(8.56))
+        console.log(Math.floor(8.56))
+
+        //abs绝对值
+        console.log(Math.abs(-10.2))
+
+        //sqrd 平方根
+        console.log(Math.sqrt(9))
+
+        //pow(底数,指数)
+        console.log(Math.pow(2,8))  //2的8次方
+
+        //max(多个参数)取最大值
+        console.log(Math.max(40,80,50,42))
+        //max(多个参数)取最大值
+        console.log(Math.min(10,50,60,80,70,20))
+
+        //PI圆周率
+        console.log(Math.PI)
+
+
+    </script>
+</body>
+</html>

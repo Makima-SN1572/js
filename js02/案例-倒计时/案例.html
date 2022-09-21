@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        //var currrentDate = new Date()
+        var targetDate = new Date("2022/10/18")
+        function diffTime(current, target) {
+            var sub = Math.ceil((target - current) / 1000)//除一千再取整
+            //天
+            var day = parseInt(sub / (60 * 60 * 24))
+            //小时
+            var hours = parseInt( sub % (60 * 60 * 24) / (60 * 60))//取余再除3600秒得到整数
+            var minutes = parseInt(sub % (60 * 60) / 60)
+            var seconds = sub % 60
+            var obj = {
+                day: day,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+            }
+            return obj
+        }
+        setInterval(function(){
+            var currrentDate = new Date()//每一秒钟都获取时间
+            var res = diffTime(currrentDate, targetDate)
+            /* document.write(`京东618-${res.day}天${res.hours}时${res.minutes}分${res.seconds}秒`)
+            document.write("<br/>") */
+            box.innerHTML = `京东618-${res.day}天${res.hours}时${res.minutes}分${res.seconds}秒`
+        },1000)
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num = 100
+        function test01(){
+            //var num = 200
+            function test02(){
+                //var num = 300
+                num = 400
+                console.log(num)//就近原则
+            }
+            //console.log(num)
+            test02()
+            //onsole.log(num)
+        }
+        console.log("修改前",num)
+        test01()//这里调用了test01,所以下方就直接就近原则跟上400
+        console.log("修改后",num)
+
+
+        function test03(a,b){
+            return a+b
+        }
+        var res = test03(1,2)
+        console.log(res)
+
+        var result
+        function test04(a,b){
+            result = a+b
+        }
+        test04(1,2)
+        console.log(result)
+    </script>
+</body>
+</html>

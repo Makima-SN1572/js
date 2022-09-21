@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "abcacbcabbc"
+        //利用对象  创个obj 先遍历,再if
+        var obj = {}
+        for(var i=0;i<str.length;i++){
+            console.log(str[i])
+            var key = str[i]  //这里是为了方便后面if才加的
+            if(obj[key] === undefined /* 当key的某个字符第一次进入时,进入key赋值1 */){
+                obj[key] = 1
+            }else{
+                obj[key]++/* else之前就赋值了,会进入++状态加一,没有这一步的话会覆盖值永远是1 */
+            }
+            //第二种
+            /* if(obj[key]){
+                obj[key]++ //如果obj[key]有值就++,没值进else赋值
+            }else {
+                obj[key] = 1
+            } */
+            
+        }
+        console.log(obj)
+    </script>
+</body>
+
+</html>

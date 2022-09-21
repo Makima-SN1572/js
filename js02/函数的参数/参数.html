@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义了两个形参
+        function test(a,b){
+            var yinliao = a===1?'可乐':'雪碧'
+            var xiaoshi = b===1?'薯条':'鸡米花'
+            var zhushi = "鸡腿堡"
+            console.log("我是套餐A",yinliao,xiaoshi,zhushi)
+        }
+
+        test(1,2)
+        test(2,1)
+        test()
+
+        console.log(a,b)//无法执行,这里的变量是没定义的,不是形参,变量分内外
+        /* 1.实参 vs 形参
+            2.可以传参,可以不传参
+            3.形参只能在函数内部使用 */
+    </script>
+</body>
+</html>
