@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">hello world<div>makima</div><span>2222</span></div>
+    <script>
+        var obox = document.querySelector(".box")
+        console.log(obox.childNodes)
+        for (var i = 0; i < obox.childNodes.length; i++) {
+            console.log(obox.childNodes[i].nodeType)
+            /* if (obox.childNodes[i].nodeType === 1) {
+                console.log(obox.childNodes[i])
+            } */
+        }
+
+        console.log("属性",obox.attributes[0].nodeValue)
+    </script>
+</body>
+
+</html>

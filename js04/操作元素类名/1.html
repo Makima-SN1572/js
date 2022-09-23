@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            color: aqua;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="item item1 item2"></div>
+    <button id="btn">click</button>
+    <script>
+        /* //.className
+        console.log(box.className)  //可以读出该标签class的值
+        box.className = "item item2" //直接赋值覆盖修改增减class
+        box.className += " item3"//给后面再加一个类名   写错重复类名也会算进去不会覆盖*/
+
+
+        //classList属性
+        console.log(box.classList)
+        box.classList.add("item3") //增加
+        box.classList.add("item")//class重复,会覆盖,不会有多个一样的类名
+        box.classList.remove("item3")//删除
+
+        //切换 toggle
+        box.classList.toggle("item2")//如果重复就会删除该类名
+        box.classList.toggle("item5")//没有就增加
+        btn.onclick = function(){
+            box.classList.toggle("item")
+        }
+    </script>
+</body>
+
+</html>

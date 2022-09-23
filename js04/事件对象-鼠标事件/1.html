@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 200px;
+            height: 200px;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            margin: 100px;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"><p></p></div>
+    <script>
+        box.onclick = function(evt){
+            //clientX,clientY 点击的位置距离浏览器可视窗口左上角的坐标值,会随着滚动条的变化而变化
+            console.log(evt.clientX,evt.clientY)
+            //pageX距离页面(文档流)左上角的位置上
+            console.log(evt.pageX,evt.pageY)
+            //offsetX,offsetY距离触发元素(点在哪个元素上,比如大盒子里的小盒子就以小盒子为准)的左上角的值
+            console.log(evt.offsetX,evt.offsetY)
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 100px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" style="width: 100px;color: black;background-color: skyblue;">111</div>
+    <script>
+        //只能获取行内样式的方法   style---能读能写    id.style.**    
+        console.log(box.style.width)
+        console.log(box.style["background-color"])
+        console.log(box.style.backgroundColor)//驼峰写法
+        //赋值
+        box.style.width = "200px"
+        box.style.backgroundColor = "yellow"
+
+        //内部样式,外部样式,行内样式  getComputedStyle 获取,但他不能赋值
+        var obox = document.getElementById("box")
+        var res = getComputedStyle(obox).height//["background-color"]    backgroundColor
+        console.log(res)
+
+
+        //getComputedStyle  标准
+        //ie 低版本 obx.currentStyle.height
+
+    </script>
+</body>
+
+</html>

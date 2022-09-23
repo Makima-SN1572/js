@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>111</div>
+    <div id="box2">112221</div>
+    <script>
+        //dom0 类型  后面会覆盖前面的
+        //div.onclick = .....
+        var oDiv = document.querySelector('div')
+        oDiv.onclick = function(){
+            console.log("你触发了div")
+        }
+        oDiv.onclick = function(){
+            console.log("你又触发了div,我覆盖了前面")
+        }
+
+        //dom2    不支持低版本 绑定多个事件处理函数 按照顺序执行
+        box2.addEventListener("click",function(){
+            console.log("你触发了box2")
+        })
+        box2.addEventListener("click",function(){
+            console.log("你触发了box2  2次")
+        })
+        box2.addEventListener("click",function(){
+            console.log("你触发了box2   3次")
+        })
+        //dom2兼容性 ie 6 7 8
+        box2.addEventListener("onclick",function(){
+            console.log("你触发了box2")
+        })
+        box2.addEventListener("onclick",function(){
+            console.log("你触发了box2  2次")
+        })
+        box2.addEventListener("onclick",function(){
+            console.log("你触发了box2   3次")
+        })
+
+
+    </script>
+</body>
+</html>

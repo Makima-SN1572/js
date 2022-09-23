@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        hello
+        <div>makima</div>
+    </div>
+    <input type="text" id="username" value="hello">
+    <select name="" id="select">
+        <option value="1">111</option>
+        <option value="2" selected>222</option> <!-- 修改默认值 -->
+        <option value="3">333</option>
+    </select>
+    <script>
+
+        //innerHTML
+        console.log(box.innerHTML)//拿取整个div
+        box.innerHTML = "<h1>1111</h1>" //更改里面内容,可以解析标签
+        //innerText  只获取文本
+        console.log(box.innerText)//拿取div的内容
+        //box.innerText = "<h1>1111<//h1>"//不解析html
+        console.log(username.value)//拿
+        username.value = "1111" //改
+        console.log(select.value)
+        select.value ="3" //<!-- js修改默认值 -->
+    </script>
+</body>
+
+</html>

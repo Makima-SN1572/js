@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="username">
+    <div id="box"></div>
+
+    <script>
+        username.onkeyup = function(evt){
+            console.log(evt.keyCode)
+            if(evt.keyCode===13){
+                console.log("创建节点")
+            }
+        }
+        box.onclick = function(evt){
+            //为了兼容
+            evt = evt || window.event
+            console.log(evt)
+        }
+
+        //兼容性 ie678 window.event
+        box.onclick = function(evt){
+            console.log(window.event)
+        }
+    </script>
+</body>
+
+</html>

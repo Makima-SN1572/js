@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">抽奖</button>
+    <script>
+        /* btn.onclick = function(){
+            console.log("谢谢惠顾")
+            this.disabled = "disabled"
+        } */
+
+
+        //事件解绑-dom0
+        /* btn.onclick = function(){
+            console.log("谢谢惠顾")
+            this.onclick = null  //这里this=btn
+        } */
+        //事件解绑-dom2
+        /* function handler(){
+            console.log("谢谢惠顾")
+            this.removeEventListener("click",handler)
+        }
+        btn.addEventListener("click",handler) */
+
+        //btn.removeEventListener("click",handler)
+
+        //dom2 低版本浏览器
+        function handler(){
+            console.log("谢谢惠顾")
+            btn.dateEvent("onclick",handler)
+        }
+        
+
+        btn.attachEvent("onclick")
+
+
+    </script>
+</body>
+
+</html>

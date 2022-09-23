@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        overflow: hidden;
+    }
+
+    li img {
+        float: left;
+        width: 100px;
+    }
+</style>
+
+<body>
+    <ul>
+    </ul>
+
+    <script>
+        var filmlist = [
+            {
+                url: "http://puui.qpic.cn/vcover_vt_pic/0/mzc002000pcdwox1655795372690/0",
+                title: "肖申克的救赎",
+                grade: 9.7
+            }, {
+                url: "https://pic.maizuo.com/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70",
+                title: "霸王别姬",
+                grade: 7.6
+            }, {
+                url: "https://pic.maizuo.com/usr/movie/f85b53cad68c6c0c2cba934107f2199e.jpg?x-oss-process=image/quality,Q_70",
+                title: "泰安尼克号",
+                grade: 7.8
+            }
+        ]
+        var filmlist = filmlist.map(function (item) {
+            return `<li>
+                <img src="${item.url}" alt="">
+                <h3>${item.title}</h3>
+                <p>观众评分${item.grade}</p>
+            </li>`
+        })
+        console.log(filmlist.join(""))
+
+        var oul = document.querySelector("ul")
+        oul.innerHTML = filmlist.join("")
+
+    </script>
+</body>
+
+</html>

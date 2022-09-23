@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 50px;
+            background: pink;
+            position: relative;
+            margin: 100px;
+        }
+
+        p {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 300px;
+            height: 200px;
+            background: yellow;
+            display: none;
+            /* 鼠标事件,穿透 */
+            pointer-events: none;
+            /* 给p标签添加层级,使其不被下面的标签挡住 */
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        makima
+        <p>内容</p>
+    </div>
+    <div>11111</div><!-- 标签越下面层级越高 -->
+    <script>
+        box.onmouseover = function(){
+            this.firstElementChild.style.display="block"
+        }
+        box.onmouseout = function(){
+            this.firstElementChild.style.display="none"
+        }
+        box.onmousemove = function(evt){
+            console.log(evt.offsetX,evt.offsetY)
+            this.firstElementChild.style.left = evt.offsetX/* 这里出来的只是数值所以要加px */ + "px"
+            this.firstElementChild.style.top = evt.offsetY/* 这里出来的只是数值所以要加px */ + "px"
+        }
+
+    </script>
+</body>
+
+</html>

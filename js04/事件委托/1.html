@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>
+            111
+            <button>aaa</button>
+        </li>
+    </ul>
+    <script>
+        list.onclick = function(evt){
+            console.log(evt.target || evt.srcElement/* ie 低版本解决方法 */) //evt.target 表示事件源头
+        }
+        //减少多个函数的绑定的性能损耗 可以利用父元素去触发子元素
+        // 动态添加li,也会有事件处理
+    </script>
+</body>
+
+</html>

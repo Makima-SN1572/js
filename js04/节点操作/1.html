@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <div id="child">11111</div>
+    </div>
+    <script>
+        //创建节点
+        var odiv = document.createElement("div")
+        odiv.className = "makima"
+        odiv.id = "a"
+        odiv.style.background = "yellow"
+        odiv.innerHTML = "新建节点"
+        console.log(odiv)
+
+
+        //插入节点   给box插入
+        //box.appendChild(odiv)
+
+        //insertBefore(要插入的节点，哪个节点的前面)
+        box.insertBefore(odiv, child)
+
+
+        //删除节点(节点对象)
+        //box.removeChild(child)
+       // box.remove(box)//删除自己以及后代
+
+       //替换节点  replaceChild(新的节点，老的节点)
+       var odiv2 = document.createElement("div")
+       odiv2.className="aa"
+       odiv2.id = "maki"
+       odiv2.style.background="skyblue"
+       odiv2.innerHTML = "makima"
+       box.replaceChild(odiv2,odiv)
+
+
+        //克隆节点()false  不克隆后代   克隆的节点.cloneNode
+        //true克隆后代  
+       var oCloneBox = box.cloneNode(true)
+       console.log(oCloneBox)
+
+        oCloneBox.id="box2"
+       document.body.appendChild(oCloneBox)
+
+
+
+
+    </script>
+</body>
+
+</html>

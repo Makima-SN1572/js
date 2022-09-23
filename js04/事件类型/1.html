@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background: #000;
+        }
+        #child{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">aaaa</button>
+    <button id="btn2">mouse</button>
+    <div id="box">
+        <div id="child"></div>
+    </div>
+    <script>
+        //鼠标事件
+        //click
+        //dblclick 双击
+        btn.onclick = function(){
+            console.log("单击")
+        }
+        btn.ondblclick = function(){
+            console.log("双击")
+        }
+
+        //contextmenu 右键单机
+        btn.oncontextmenu = function(){
+            console.log("右键,自定义右键菜单")
+        }
+
+        //mousedown mousemove mouseup
+        btn2.onmousedown = function(){
+            console.log("鼠标按下,按下时触发")
+        }
+        btn2.onmousemove = function(){
+            console.log("鼠标移动")
+        }
+    
+        btn2.onmouseup = function(){
+            console.log("鼠标抬起触发")
+        }
+
+        //移入移出 mouseover mouseout
+        /* box.onmouseover = function(){
+            console.log("移入")
+        } */
+        box.onmouseout = function(){
+            console.log("移入")
+        }
+        //移入移除 只给绑定的盒子触发 mouseenter mouseleave
+        /* box.onmouseenter = function(){
+            console.log("移出")
+        } */
+        box.onmouseleave = function(){
+            console.log("移出")
+        }
+
+    </script>
+</body>
+</html>

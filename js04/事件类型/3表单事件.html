@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="idform">
+        <input type="text" name="" id="username">
+        <input type="reset" name="" id="">
+        <input type="submit" name="" id="" value="提交">
+    </form>
+    <script>
+        //fous blur
+        username.onfocus = function () {
+            console.log("获取焦点")
+        }
+        username.onblur = function () {
+            console.log("失去焦点")
+        }
+
+        //change  获取焦点,失去焦点的对比里面内容不一样才会触发
+        /* username.onchange = function () {
+            console.log("change")
+        } */
+
+        //input 内容不一样就会触发
+        username.oninput = function () {
+            console.log("input")
+        }
+
+
+        //submit  ,  reset
+        idform.onsubmit = function(){
+            console.log("提交","校验表单内容")
+            //阻止跳转行为
+            return false
+        }
+        idform.onreset = function(){
+            console.log("重置")
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

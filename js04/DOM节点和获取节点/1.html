@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>hello</div>111
+    <div id="box">
+        makima
+        <p>111</p>
+        <p>111222</p>
+        <!-- 000 -->
+    </div>
+    <div>hahahah</div>
+    <script>
+        /*
+        1. \n
+        makima文本节点
+        \n
+        2.<p>111</p>
+         3.\n  回车空格文本节点
+         4.<!-- 000 -->注释节点
+         5.\n
+             写成一行就是三个节点*/
+
+        //childNodes属性  vs  children
+        //console.log(box.childNodes)//获取box节点里所有的子节点
+        //console.log(box.children)//获取box节点里所有的元素
+
+        //firstChild  firstElementChild
+        //console.log(box.firstChild) //获取第一个子节点
+        //console.log(box.firstElementChild) //获取第一个元素节点
+        //lastChild   lastElementChild
+        //console.log(box.lastChild)//获取第最后一个子节点
+        //console.log(box.lastElementChild)//获取最后一个元素节点
+
+        //previousSibling   previousElementSibling   获取上一个兄弟节点和上一个兄弟元素节点
+        /* console.log(box.previousSibling)
+        console.log(box.previousElementSibling)
+        box.previousElementSibling.innerHTML = "abbb" */
+
+        //nextSibling   nextElementSibling  获取下一个兄弟节点和下一个兄弟元素节点
+        /* console.log(box.nextSibling)
+        console.log(box.nextElementSibling)
+
+        box.nextElementSibling.dataset.makima=1 */
+
+        //parentNode vs parentElement  //找爹,一层一层往上找,最后找到doucument根节点
+
+        //console.log(box.parentNode.parentNode.parentNode)
+        //console.log(box.parentElement.parentElement) //最上元素节点HTML
+
+
+        //属性节点
+        console.log(box.getAttribute("id"))//拿到指定属性节点
+        console.log(box.attributes)//拿到所有属性节点
+        console.log(box.attributes[0])//拿到第几个下标属性节点
+
+    </script>
+</body>
+
+</html>

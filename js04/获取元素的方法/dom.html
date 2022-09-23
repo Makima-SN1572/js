@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .newsitem {}
+</style>
+
+<body>
+    <div id="box"></div>
+    <div name="div1">111</div>
+    <div name="div2">222</div>
+    <input name="username" type="text">
+    <input name="password" type="password">
+    <ul>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+        <li class="newsitem">111</li>
+    </ul>
+    <ul>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+        <li class="aditem">111</li>
+    </ul>
+    <script>
+        //console.log(box)
+        //box.innerHTML = "1111"
+        /* 
+        1.html head body 非常规
+        2.常规 ==>id,class,tag....
+        */
+
+        console.log(document.documentElement)//直接拿到整个页面最外层的节点   rem
+        console.log(document.head) //获取head
+        console.log(document.body) //获取body
+
+        ////////////////////////////////////
+
+        //console.log(document.getElementById("box"))//获取节点通过id
+        var obox = document.getElementById("box") //获取节点通过id
+        obox.innerHTML = "1111"  //给里面添加内容
+
+        var items = document.getElementsByClassName("newsitem")//获取节点通过class
+        console.log(items)  //伪数组
+        //items[0].innerHTML = "222222"  //这里利用和数组一样的方法给第0个class赋值
+        //利用遍历给伪数组赋值
+        for (var i = 0; i < items.length; i++) {
+            items[i].innerHTML = "news-"+i
+        }
+
+        //Set => Array.from
+        var newsitems = Array.from(items)  //直接把伪数组转成数组
+        console.log(newsitems.filter)
+
+
+        //获取元素附属通过标签名
+        var itemss = document.getElementsByTagName("li") //获取对象为li
+        console.log(itemss)
+
+        //通过name获取节点
+        var itemsss = document.getElementsByName("username")
+        console.log(itemsss[0])
+        itemsss[0].value = "makima" //通过这种方法给赋值 
+
+        //qureySelector  返回遇到的第一个对象
+        var mm = document.querySelector("ul li")
+        var mmm = document.querySelector(".aditem")
+        console.log(mm)
+        console.log(mmm)
+
+        //获取所有对象querySelectorAll
+        var mo = document.querySelectorAll("ul li")
+        var moo = document.querySelectorAll("ul li.aditem")
+        console.log(mo)
+        console.log(moo)
+        </script>
+</body>
+
+</html>

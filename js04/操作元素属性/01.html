@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box" makima="world">hello</div>
+    <input type="text" value="hello" id="username">
+    <input type="checkbox" checked id="rember">
+    <img src="" alt="" id="photo">
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+
+    <div id="obox" data-mark="lello" data-mark00="lello00"></div>
+    <script>
+        //操作原生属性
+        box.innerHTML = "222"
+        username.type = "password"
+
+        rember.checked = false //默认true勾上,这里改false取消勾选
+        photo.src = "https://tse1-mm.cn.bing.net/th/id/OIP-C.nRlAFygdctTCHmIWN7GxRwHaEK?pid=ImgDet&rs=1"
+
+        //自定义属性
+        //给标签加一个自定义属性 setAttribute 
+        box.setAttribute("tie", "222")
+        console.log(box.getAttribute("tie")) //获取属性值
+
+        box.removeAttribute("tie") //删除自定义属性
+
+        //使用自定义属性  给li加上自定义属性
+        var item = document.getElementsByTagName("li")
+        for(var i=0;i<item.length;i++){
+           // item[i].setAttribute("makima",i)
+           item[i].dataset.makima = i  //自定义属性
+        }
+
+        //H5===>约定 data-自定义属性="value"
+        console.log(obox.dataset) //获取   dataset只有在自定义属性时不为空
+        obox.dataset.xioaming = "hello"  //不需要取div里面,在js中设置自定义属性的方法
+
+        delete  obox.dataset.mark00  //删除自定义
+
+
+    </script>
+</body>
+
+</html>

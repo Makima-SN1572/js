@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        ul li {
+            overflow: hidden;
+            height: 150px;
+        }
+
+        ul li img {
+            float: left;
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>标题</h1>
+    <ul id="list"></ul>
+    <script>
+
+        var arr1 = [
+            {
+                url: "http://puui.qpic.cn/vcover_vt_pic/0/mzc002000pcdwox1655795372690/0",
+                title: "肖申克的救赎"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70",
+                title: "霸王别姬"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/f85b53cad68c6c0c2cba934107f2199e.jpg?x-oss-process=image/quality,Q_70",
+                title: "泰安尼克号"
+
+            },
+            {
+                url: "http://puui.qpic.cn/vcover_vt_pic/0/mzc002000pcdwox1655795372690/0",
+                title: "肖申克的救赎"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70",
+                title: "霸王别姬"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/f85b53cad68c6c0c2cba934107f2199e.jpg?x-oss-process=image/quality,Q_70",
+                title: "泰安尼克号"
+
+            }]
+        var arr2 = [
+            {
+                url: "http://puui.qpic.cn/vcover_vt_pic/0/mzc002000pcdwox1655795372690/0",
+                title: "肖申克的救赎"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70",
+                title: "霸王别姬"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/f85b53cad68c6c0c2cba934107f2199e.jpg?x-oss-process=image/quality,Q_70",
+                title: "泰安尼克号"
+
+            },
+            {
+                url: "http://puui.qpic.cn/vcover_vt_pic/0/mzc002000pcdwox1655795372690/0",
+                title: "肖申克的救赎"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/1ce4633160a172867c415b85e4a1cab3.jpg?x-oss-process=image/quality,Q_70",
+                title: "霸王别姬"
+
+            },
+            {
+                url: "https://pic.maizuo.com/usr/movie/f85b53cad68c6c0c2cba934107f2199e.jpg?x-oss-process=image/quality,Q_70",
+                title: "泰安尼克号"
+
+            }
+        ]
+        isloding = false
+        renderHTML(arr1)
+        function renderHTML(arr) {
+            list.innerHTML += arr.map(function (item) {
+                return `<li>
+            <img src="${item.url}" alt="">
+            <h3>${item.title}</h3>
+        </li>`
+            }).join("")
+
+
+            //优化
+            for (var i = 0; i < arr.length; i++) {
+                var oli = document.createElement("li")
+                oli.innerHTML = `<img src="${arr[i].url}" alt="">
+            <h3>${arr[i].title}</h3>`
+            list.appendChild(oli)
+            }
+        }
+        window.onscroll = function () {
+            var listHeight = list.offsetHeight
+            var listTop = list.offsetTop
+            //console.log(listHeight+listTop)
+            var scrollTop = document.documentElement.scrollTop ||
+                document.body.scrollTop
+            var windowHeight = document.documentElement.clientHeight
+            //console.log(Math.round(windowHeight+scrollTop))
+            if (isloding) return
+            if ((listHeight + listTop) - Math.round(windowHeight + scrollTop) < 50) {
+                console.log("到底了")
+                isloding = true
+
+                //渲染下一页数据
+                setTimeout(function () {
+                    renderHTML(arr2)
+                    isloding = false  //下一次到底事件继续触发
+                }, 1000)  //这里模拟延迟一秒钟
+            }
+        }
+    </script>
+</body>
+
+</html>
