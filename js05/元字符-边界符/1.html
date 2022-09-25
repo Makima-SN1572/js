@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ^开头
+        var reg = /^\d/  //表示开头必须是一位数字
+        console.log(reg.test("1a"))
+
+        //  $结尾边界
+        var reg1 = /\d$/ //结尾必须是一位数字
+        console.log(reg1.test("a1"))
+
+
+        //^开头结束$
+        var reg2 = /^a\dc$/   //开头必须是a  中间必须包含一位数字 结尾必须是c
+        console.log(reg2.test("a1c"))
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">click
+        -<span>1111111</span>
+    </div>
+    <script>
+        //this  关键字
+
+        //this 谁调用this,他就指向谁  (es6 箭头函数)
+        //全局
+        //console.log(this)
+        /* function test() {
+            console.log(this)
+        }
+        test()  */ //调用 全局中被window调用
+
+        //对象
+        /* var obj = {
+            name:"makima",
+            test:function(){
+                console.log("1111",this.name)
+            }
+        }
+        //console.log(obj.test)
+        //调用
+        obj.test() */
+
+        //setTimeout 定时器
+        /* setTimeout(function(){
+            console.log(111,this)
+        },2000) */ //2s 后定时器被window窗口调用,所以this指向window
+        /* setInterval(function(){
+            console.log(111,this)
+        },2000) */
+
+        //事件绑定的this
+        //dom0
+        /* box.onclick = function(){
+            console.log(this)
+            console.log(this.innerHTML)
+        } */
+        //dom2
+        box.addEventListener("click",function(evt){
+            console.log(evt.target)//evt是绑事件的对象,你点哪个他输出哪个
+            console.log("111",this)//this就只是box节点调用
+        })
+        //不论是dom0还是dom2 this都是指向这里的box节点
+
+
+    </script>
+</body>
+
+</html>

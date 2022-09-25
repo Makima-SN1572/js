@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+                //懒惰  解决方案用 g全局
+
+        //贪婪
+
+        var reg = /\d{1,4}/
+        console.log(reg.exec("aa123456"))  //能捕获的越多就越多
+        //非贪婪 ?
+        var reg1 = /\d{1,4}?/
+            console.log(reg1.exec("aa123456"))  //能捕获的越少就越少
+
+            /* 
+            *? 非贪婪
+            +? 非贪婪
+            ?? 0次
+            {n,}? 最少
+            {n,m}? 最少
+             */
+
+
+        var str = `<p class="active"><span>makima</span></p>` 
+        var myreg = /<p.*?>/
+        console.log(myreg.exec(str))
+
+    </script>
+</body>
+
+</html>

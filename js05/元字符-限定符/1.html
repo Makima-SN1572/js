@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // *  0~多次
+        var reg = /\d*/  //包含几个都行
+        console.log(reg.test("a"))
+        console.log(reg.test("a1"))
+        console.log(reg.test("a12"))
+
+        // +  1~多次
+        var reg1 = /\d+/  //至少包含一个
+        console.log(reg1.test("a"))
+        console.log(reg1.test("a1"))
+        console.log(reg1.exec("a124584")) //exec因为有+号可以把里面的数字都拿出来
+        var reg2 = /\d/ 
+        console.log(reg2.exec("a15615"))  //没有+只能拿一位数字
+
+        // ? 0~1
+        var reg2 = /\d?/  //0次到1次都可以
+        console.log(reg2.test("a"))
+        console.log(reg2.test("a1"))
+
+        // {n}  指定几次
+        var reg3 = /\d{3}/   //至少包含三个数字
+        console.log(reg3.test("a"))
+        console.log(reg3.test("a1"))
+        console.log(reg3.test("a123"))
+        var reg4 = /a{3}/   //至少包含三个a,exec只能捕获3个
+        console.log(reg4.test("a"))
+        console.log(reg4.test("aa1"))
+        console.log(reg4.test("aaa123"))
+        
+
+        // {n,}  最少n次  >=  exec捕获>=3,都可以捕获
+        var reg5 = /\d{3,}/ 
+        console.log(reg5.test("a"))
+        console.log(reg5.test("aa1"))
+        console.log(reg5.test("aaa123"))
+        console.log(reg5.test("aa1154165"))
+
+        //{n,m}   数学区间[3,5]
+        var reg6 = /\d{3,5}/ 
+        console.log(reg6.test("aa"))
+        console.log(reg6.test("aaa123"))
+        console.log(reg6.test("aa12345"))
+        console.log(reg6.test("aa1154165"))
+        console.log(reg6.exec("aa1154165"))  //最多捕获5个
+
+        var rega = /abc{2}/   //必须包含a+b+c+c  {}只能修饰紧挨着的前面的字符
+        console.log(rega.test("abc"))
+        console.log(rega.test("abcc"))
+
+        var regb = /^abc{2}$/   
+        console.log(regb.test("abc"))
+        console.log(regb.test("abcc"))
+
+
+    
+
+    </script>
+</body>
+
+</html>

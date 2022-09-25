@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // () ()里面表示一个整体
+        var rega = /(abc){2}/     //包含两次abc
+        console.log(rega.test("abcc"))
+        console.log(rega.test("abcabc"))
+
+        //  | 或 ,
+        var regb = /a|b/  //包含a或者b 包含一个就行
+        console.log(regb.test("acc"))
+        console.log(regb.test("bcc"))
+        console.log(regb.test("bcac"))
+
+
+        var regc = /(abc|def)/   //不论加不加()abc和def都作为一个整体,|的左右两侧都做为一个整体 包含一个就行
+        var regd = /abc|def|zxf/   //不论加不加()abc和def都作为一个整体,|的左右两侧都做为一个整体 包含一个就行
+        console.log(regd.test("abc"))
+        console.log(regd.test("abdef"))
+        console.log(regd.test("abzxfef"))
+
+
+        // []  里面数值有一个就符合,数值不为整体
+        var reg = /[abcdef]/  //相等于[a-f] 
+        console.log(reg.test("akllk"))
+        console.log(reg.test("k"))
+        var reg1 = /[abcdef]{3,5}/  // 要包含3个到5个
+        console.log(reg1.test("abcd"))
+        console.log(reg1.test("alilil"))
+        
+        //[a-zA-Z0-9_] = \w  
+        //[0-9] = \d
+
+
+        // [^abc]\   取反 不包括  但其需要输出的内容只要有一个不在范围内也为TRUE
+        var reg2 = /[^abc]/
+        console.log(reg2.test("a"))
+        console.log(reg2.test("abv"))  // v不在范围内
+
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">111</button>
+    <script>
+        var name = "111111111111"
+        //call appil bind
+
+        var obj1 = {
+            name:"obj1",
+            getName:function(a,b,c){
+                console.log("getName1",this.name)
+                console.log("参数",a,b,c)
+            }
+        }
+        var obj2 = {
+            name:"obj2",
+            getName:function(){
+                console.log("getName2",this.name)
+            }
+        }
+        //console.log(obj1)
+        obj1.getName()
+        obj2.getName()
+
+        //让obj1的this指向obj2   ntr
+        //call 执行函数,并改变this执行为函数第一个参数  可以传n个参数 a,b,c
+        obj1.getName.call(obj2,1,2,3)//把obj1的参数getName强行转变为obj2,this就改变了他的指向参数
+
+        //apply  执行函数,并改变this执行为函数第一个参数  apply只能传两个参数,第二个参数是一个数组要加[]
+        obj1.getName.apply(obj2,[1,2,3])//传后面的参数要加[]
+
+        obj1.getName.call(window)//执行了window下的name
+
+
+
+        //bind   改变this指向为函数的第一个参数,不会自动执行函数
+        var fun1 = obj1.getName.bind(obj2,1,2,3)
+        console.log(fun1)
+        fun1() //手动执行
+
+
+        //让按钮在触发时this去指向window
+        btn.onclick = handler.bind(window) //bind()让this指向window还不会立即执行
+        function handler(){
+            console.log(111,this)
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //正则.test()
+        //正则.exec()
+
+        //字符串.replace  seach match
+        var str = "abcdefafa"
+        //var newstr = str.replace("a","*")//这里单单replace只能替换第一个a
+        var newstr = str.replace(/a/g,"*") //利用正则表达式来全部替换
+        console.log(newstr)
+
+        //search
+        console.log(str.search("a"))
+        console.log(str.search(/a/))  
+        console.log(str.search(/ax/)) //找不到  -1
+
+        //match 捕获内容
+        var str1 = "adafefga"
+        console.log(str.match("ad"))
+
+        var datestr1 = "time is 2022-01-01 12:20:20 to 2023-11-01 12:20:20"
+        console.log(datestr1.match(/(\d{4})-(\d{1,2})-(\d{1,2})/g))
+
+
+    </script>
+</body>
+
+</html>
