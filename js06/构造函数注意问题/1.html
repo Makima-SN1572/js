@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.首字母大写 CreateObj
+        /* function CreateObj(name){
+            this.name = name
+        }
+        var obj1 = new CreateObj("烧鸭")
+        console.log(obj1) */
+
+        //2.构造函数不写return
+        /* function CreateObj(name){
+            this.name = name
+            return {
+                a:1,
+                b:2
+            } //"1111"//return普通类型没用不执行,复杂就返回复杂不如直接写一个
+        }
+        var obj1 = new CreateObj("烧鸭")
+        console.log(obj1) */
+
+        //3.构造函数可以当普通函数用
+        /* function CreateObj(name){
+            console.log(this)//指向window
+            this.name = name
+        }
+        //var obj1 = new CreateObj("烧鸭")
+        //console.log(obj1)
+        var obj1 = CreateObj("makima")
+        console.log(obj1,window.name) */  //undefined,这里的this是给window的,所以是给window加了一个name属性
+
+        //this指向
+        function CreateObj(name){
+            console.log(this)//这里this还没有被调用,实例化完成就指向new CreateObj了
+            this.name = name
+            this.cook = function(){
+                console.log(this.name)
+            }
+        }
+        var obj1 = new CreateObj("烧鸭")//这里是给实例化对象赋值命名而已 new CreateObj("烧鸭")// new这个过程是实例这个过程 这里new CreateObj把this指向他
+        //实例对象已经生成
+        //console.log(obj1)
+        obj1.cook()//调用cook函数=>cook函数里有this=>this已经被实例化指向=>this.name=>实例化的值
+        
+    </script>
+</body>
+</html>

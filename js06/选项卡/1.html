@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function CreaterObj(name){
+            this.name = name
+        }
+        CreaterObj.prototype.getName = function(){
+            console.log("1111",this.name)
+        }
+        var obj1 = new CreaterObj("makima")
+        obj1.getName() //函数之前
+        
+        /* obj1.getName = function(){
+            console.log(2222)
+        }
+        obj1.getName()   // 无法覆盖obj2,只能在函数执行之后去覆盖obj1  obj1.getName()写在函数之前就没用*/
+        
+        /* CreaterObj.prototype.getName = function(){
+            console.log(222222)
+        }//这样就可以通过改原型去覆盖obj2 */
+
+        var obj2 = new CreaterObj("moko")
+        obj2.getName()
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <div class="box2">
+        <h1></h1>
+        <img src="" style="width:100px;">
+        <ul></ul>
+    </div>
+    <script>
+        var data1 = {
+            title: "体育",
+            list: ["体育1", "体育2", "体育3"]
+        }
+        var data2 = {
+            title: "综艺",
+            url: "https://pic.maizuo.com/usr/movie/f85b53cad68c6c0c2cba934107f2199e.jpg?x-oss-process=image/quality,Q_70",
+            list: ["综艺1", "综艺2", "综艺3"]
+        }
+        function CreateList(select, data={}) {
+            this.ele = document.querySelector(select)
+            this.title = data.title,
+                this.list = data.list
+
+        }
+
+        //原型prototype    把render挂在原型上,好处:共享内存
+        CreateList.prototype.render = function () {
+            //渲染页面
+            //获取h1节点   利用父节点找li节点
+            var h1 = this.ele.querySelector("h1")
+            var ul = this.ele.querySelector("ul")
+            h1.innerHTML = this.title
+            ul.innerHTML = this.list.map(item => `<li>${item}</li>`).join("")
+        }
+
+        var obj1 = new CreateList(".box1", data1)
+        obj1.render()
+
+        function CreateImgList(select, data) {
+            CreateList.call(this, select, data)  //继承
+            this.imgUrl = data.url //新增
+
+        }
+        CreateImgList.prototype = new CreateList()
+        /* CreateImgList.prototype.enchenceRender = function (){
+            this.render()
+            var img = this.ele.querySelector("img")
+            img.src = this.imgUrl
+        } */
+        CreateImgList.prototype.render = function (){
+            CreateList.prototype.render.call(this)
+            var img = this.ele.querySelector("img")
+            img.src = this.imgUrl
+        }
+
+
+        var obj2 = new CreateImgList(".box2", data2)
+        //obj2.enchenceRender()
+        obj2.render()
+        console.log(obj2)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // var
+        console.log(b) //定义变量之前使用变量不会报错
+        var b = 100
+        //let const
+        //let const与 var 的区别
+
+
+        //1.let,const必须先定义再使用
+        //console.log(b) //定义变量之前使用变量不会报错
+        //var b = 100
+        //console.log(a) // 1.会报错
+        //let a = 100 
+
+        //2.变量重名
+        var name = "makima"
+        var name = "keke" //var相同变量会覆盖
+
+        //let old = 100
+        //let old = 200 //let const重名直接报错
+
+        //3.块级作用域 {}
+        //var 可以在局部外调用
+        if(true){
+            var i = 100
+            console.log(i)
+        }
+        console.log(i)
+
+        //let const只能在局部内用
+        if(true){
+            let k = 100
+            console.log(k)
+        }
+        //console.log(k)报错
+
+        //let 和 const的区别
+        //let  变量
+        let name1 = "makima"
+        name1 = "mokok"
+        //const  常量
+        const name2 = "makima"
+        //name2 = "mokok00"//会报错
+
+
+        //复杂类型因为储存地址不同所以可以改,但不可以直接改原对象里的值
+        const obj = {
+            name:"maki"
+        }
+        //obj = {name:"mamamma"}会报错
+        obj.name = "momo"
+        console.log(obj)
+
+        //let a 可以不赋值
+        //const b 不能不赋值会报错
+
+
+
+
+
+
+    </script>
+</body>
+</html>

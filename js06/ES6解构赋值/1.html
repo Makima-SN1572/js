@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //快速的从对象和数组中获取里面的成员
+        var arr = ["makikma", "okok", "cccc"]
+        //arr[1]  arr[arr.length-1]
+
+        let [x, y, z] = arr
+        console.log(x, y, z)
+        /* let [x] = arr
+        console.log(x)*/
+
+
+        var a = 10
+        var b = 20
+
+        //交换
+        var [a, b] = [b, a]
+        console.log(a, b)
+
+
+        var arr2 = [1, 2, [3, 4, [5]]]//多维数组
+        console.log(arr2[2][2][0])
+        var [q, w, [e, r, [t]]] = arr2
+        console.log(t)
+
+
+        /* var obj = {
+            name:"maki",
+            age:100,
+            location:"dalian"
+        }
+        document.write(obj.name)
+        document.write(obj.age)
+        document.write(obj.location)
+        let {name,age,location:mylocation} = obj //因为是let命名location是在window里有的所以let加个:mylocation,用var就是覆盖winodw里的location
+        document.write(name)
+        document.write(age)
+        document.write(mylocation)
+ */
+        //多维度
+        var obj2 = {
+            name: "maki",
+            age: 100,
+            location: {
+                province: "liaoning",
+                city: "dalian"
+            },
+            hobby: [111, 222, 333]
+        }
+        var {
+            name,
+            age,
+            location: {
+                province,
+                city
+            },
+            hobby: [m, n, k]
+        } = obj2
+        console.log(name, age, province, city, m, n, k)
+
+    </script>
+</body>
+
+</html>

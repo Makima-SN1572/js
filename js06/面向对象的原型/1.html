@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box1">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <div class="box2">
+        <h1></h1>
+        <ul></ul>
+    </div>
+    <script>
+        var data1 = {
+            title: "体育",
+            list: ["体育1", "体育2", "体育3"]
+        }
+        var data2 = {
+            title: "综艺",
+            list: ["综艺1", "综艺2", "综艺3"]
+        }
+        function CreateList(select, data) {
+            this.ele = document.querySelector(select)
+            this.title = data.title,
+                this.list = data.list
+
+            /* this.render =  function(){
+                //渲染页面
+                //获取h1节点   利用父节点找li节点
+                var h1 = this.ele.querySelector("h1")
+                var ul = this.ele.querySelector("ul")
+                //console.log(h1,ul)
+                h1.innerHTML = this.title
+                ul.innerHTML = this.list.map(item=>`<li>${item}</li>`).join("") 
+            } */
+        }
+
+        //原型prototype    把render挂在原型上,好处:共享内存
+        CreateList.prototype.render = function () {
+            //渲染页面
+            //获取h1节点   利用父节点找li节点
+            var h1 = this.ele.querySelector("h1")
+            var ul = this.ele.querySelector("ul")
+            //console.log(h1,ul)
+            h1.innerHTML = this.title
+            ul.innerHTML = this.list.map(item => `<li>${item}</li>`).join("")
+        }
+
+        //只要结构类似,随便new 想要多少来多少
+        var obj1 = new CreateList(".box1", data1)
+        //var obj2 = new CreateList(data2.tilte,data2.list)
+        //console.log(obj1) 
+
+        obj1.render()
+        //console.log(obj2) 
+        var obj2 = new CreateList(".box2", data2)
+        obj2.render()
+
+
+        //对象.__proto__  ===  构造函数的原型==> 构造函数.prototype         万物皆可对象,是对象就有__proto__属性,只不过不显示
+        console.log(obj1.__proto__)
+        console.log(CreateList.prototype)
+        console.log(obj1.__proto__ === CreateList.prototype)
+
+        //拓展: obj1.toString()  //原型链概念
+        //  Object是原型链的顶点之下  顶点是空   Object.prototype.toString
+    </script>
+</body>
+
+</html>

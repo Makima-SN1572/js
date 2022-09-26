@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+    </ul>
+    <h1>修改</h1>
+    <input type="text" id="myusername">
+    <input type="number" name="" id="myage">
+    <button id="btn">修改</button>
+    <div id="box"></div>
+    <script>
+        //... 展开数组
+        /* var a = [1,2,3]
+        var b = [4,5,6]
+        //console.log(a.concat(b))
+        var c = [...a,...b]
+        console.log(c)
+ */
+        //...复制
+        var a = [1, 2, 3]
+        var b = [...a]//表示新创建的数组,不影响原来数组
+        //var b = a.slice() //方法不会改变原始数组 方法以新的数组对象，返回数组中被选中的元素
+        //var b = a.concat()新建数组
+        b[0] = "makki"
+        console.log(a, b)
+
+
+        //...参数-实参-形参   正常回调参数也可以用  
+        //a,b,  是表示1=a 2=b 那么输出的是arr就顺位下去从3开始
+        /* var test = (a,b,...arr)=>{
+            console.log(arr) 
+        }
+        test(1,2,3,4) */
+
+
+        /* var arr = [1,2,3]
+        var test = function(a,b,c){
+            console.log(a,b,c)
+        }
+        //test(arr[0],arr[1],arr[2])
+        test(...arr) */
+
+
+        /* var arr = [1,2,3,4,3,8,5,6,52,4,8,75,5,54,6]
+        var res = Math.max(...arr)//找最大值
+        console.log(res) */
+
+
+        //...伪数组转换
+        /* function test(){
+            //var arr = Array.from(arguments)//arguments是伪数组,这里转成真数组
+            var arr = [...arguments]//...这么转真数组
+            console.log(arr)
+        }
+        test(1,2,3)
+
+        var oli = document.querySelectorAll("li")
+        //console.log(oli.filter)伪数组用不了filter
+        var oliarr = [...oli] //转真数组
+        console.log(oliarr.filter) */
+
+
+        //...对象
+        /* var obj1 = {
+            name:"makima",
+            age:100
+        }
+        var obj2 = {
+            name:"重名覆盖",
+            location:"dalian"
+        }
+        var obj = {
+            ...obj1, //两个对象key值重名覆盖
+            ...obj2
+        }
+        console.log(obj) */
+
+        var obj = {
+            name:"makima",
+            age:100,
+            location:"dalian",
+            id:"21611561"  //不能重名改变id
+        }
+
+        function render(/* obj */{name,age,location}){
+            //var {name,age,location} = obj
+            //渲染数据
+            box.innerHTML = `name:${name},age${age},location${location}`
+        }
+        render(obj)
+        btn.onclick = function(){
+            var name = myusername.value || obj.name //防止不淑如数据刷新
+            var age = myage.value || obj.age
+
+            //合并对象,重新给对象赋值
+            //简写
+            var newobj = {
+                ...obj,
+                name,
+                age
+            }
+            console.log(newobj)
+            //传后端
+
+            //更新渲染数据
+            render(newobj)
+        }
+
+
+    </script>
+</body>
+
+</html>

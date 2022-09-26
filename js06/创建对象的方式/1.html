@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* //字面量
+        var obj1 = {
+            name:"烧鸭",
+            material:["aaa","bbb"],
+            setCook(){
+
+            }
+        var obj2 = {
+            name:"海参",
+            material:["aaa","bbb"],
+            setCook(){
+
+            }
+        } */
+
+        //内置构造函数  
+        /* var obj1 = new Object()
+        obj1.name = "东坡肉"
+        var obj2 = new Object()
+        obj1.name = "烧肉" */
+
+        //以上都是当有一个新需求时我们就只能去重新创建一个新对象,来满足需求
+
+        //工厂函数
+        //只需要调用一下函数就可以返回你需要的对象
+        //把你需要点菜的名字当成参数到形参,不需要给里面加什么
+        /* function createObj(name){
+            var obj = {}
+            obj.name = name,
+            obj.material = []
+            return obj
+
+        }
+        //需要什么anme就点名什么name
+        var obj1 = createObj("东坡肉")
+        console.log(obj1)
+        var obj2 = createObj("烧鸭")
+        console.log(obj2)
+ */
+
+        //自定义构造函数
+        //new Object()  new String() new Array()
+        function createObj(name){
+            //new * 之后自动创建对象,自动返回对象
+            this.name = name
+            this.material = []
+            this.cook = function(){
+
+            }
+        }
+
+        var obj1 = new createObj("烧鸭")
+        var obj2 = new createObj("东坡肉")
+        console.log(obj1,obj2)
+
+
+    </script>
+</body>
+
+</html>

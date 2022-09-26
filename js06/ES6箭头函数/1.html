@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="my">
+    <script>
+        /* var test = function(){
+            console.log("11111")
+        }
+
+        var test1 = () =>{
+            console.log("222")
+        }
+        test()
+        test1() */
+        //1. ()可以省略
+
+        //当形参只有一个可以省略()
+        //var test = (a) =>
+        var test8 = a =>{
+            console.log(111,a)
+        }
+        test8("makima")
+
+
+        //2.{}可以省略  只有一句代码,只有返回值return时,return也可以省略
+        var test1 = b => 100*b
+        console.log(test1(10))
+
+        var list = ["aaa","bbb","ccc"]
+        var newlist = list.map(item=>`<li>${item}</li>`)
+        console.log(newlist.join(""))
+
+        var test2 = () =>console.log("111")
+        test2()
+
+        //返回的是一个对象 ({对象})加小括号
+        var test3 = () => ({name:"makima"}) /*{
+             return {
+                name:"makima"
+            }
+        }  */
+        console.log(test3())
+
+        //3.没有arguments   arguments是一个伪数组
+        var test6 = ()=>{
+            //console.log(a,b,c)
+            //console.log(arguments[0],arguments[1],arguments[2])//报错
+            //把伪数组转成真数组  当你需要map遍历时要转真数组
+            //console.log(Array.from(arguments))
+        }
+        test6(1,2,3)
+
+
+        //4.箭头函数没有this,
+        //箭头函数this是父级作用域的
+        my.oninput = function(){
+            console.log(this.value)
+            //var that = this
+            setTimeout(()=>{
+                console.log(this.value)//这里就是作用于my了
+            },1000)
+        }
+
+        //防止忘记传参 给函数设置默认传参a=10,b=15
+        /* function test(a=10,b=15){
+            return a+b
+        } */
+        var test = (a=1,b=2)=>a+b
+        console.log(test(10,20))
+        console.log(test())//没有传参,启用默认参数
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

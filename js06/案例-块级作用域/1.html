@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            width: 500px;
+        }
+
+        .header li {
+            flex: 1;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .box li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 200px;
+            background-color: yellow;
+            display: none;
+        }
+
+        .header .active {
+            background-color: aqua;
+        }
+
+        .box .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="header">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul class="box">
+        <li class="active">001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+    <script>
+        var headeritem = document.querySelectorAll(".header li")
+        var boxitem = document.querySelectorAll(".box li")
+        for (let i = 0; i < headeritem.length; i++) {
+            //加自定义属性 
+            // headeritem[i].dataset.makima = i
+            headeritem[i].onclick = function () {
+                console.log(i)
+                //点谁给谁绑active   this给你你点的对象
+                //获取自身的属性
+                //console.log(this.dataset.makima)
+                var makima = i
+                for (var m = 0; m < headeritem.length; m++) {
+                    //管你点谁直接全删了
+                    headeritem[m].classList.remove("active")
+                    boxitem[m].classList.remove("active")
+                }
+                //再显示点的li
+                headeritem[makima].classList.add("active")
+                boxitem[makima].classList.add("active")
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
